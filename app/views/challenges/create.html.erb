@@ -1,0 +1,55 @@
+<% title 'Results' %>
+
+<p>This search has been filtered for:</p>
+
+<ul>
+  <li>Tag: <%= @challenge.tag %></li>
+
+  <li>Group ID (Twitter Photo Challenge Group): <%= ENV['FLICKR_GROUP'] %></li>
+</ul>
+
+<% @info.each do |item| %>
+    <table>
+      <tr class="title" valign="top">
+        <th width="150">Title</th>
+        <th>
+          <%= item["title"] %>
+        </th>
+      </tr>
+      <tr valign="top">
+        <th colspan="2" class="image">
+          <img src="<%= item["url_sq"] %>"/>
+        </th>
+      </tr>
+      <tr valign="top">
+        <th>ID</th>
+        <td>
+          <%= item["id"] %>
+        </td>
+      </tr>
+      <tr valign="top">
+        <th>Tags</th>
+        <td>
+          #<%= item["tags"].split(/ /).join("<br/> #") %>
+        </td>
+      </tr>
+      <tr valign="top">
+        <th>Description</th>
+        <td>
+          <%= item["description"] %>
+        </td>
+      </tr>
+      <tr valign="top">
+        <th>Owner name</th>
+        <td>
+          <%= item["ownername"] %>
+        </td>
+      </tr>
+      <tr valign="top">
+        <th>Date taken</th>
+        <td>
+          <%= item["datetaken"] %>
+        </td>
+      </tr>
+    </table>
+<% end %>

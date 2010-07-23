@@ -79,3 +79,27 @@ a {
   font-size: 12px;
   list-style: disc;
 }
+
+th {
+    text-align: left;
+}
+
+table {
+    border-collapse: collapse;
+    border: solid 1px silver;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+th, td {
+    border: solid 1px silver;
+}
+
+tr.title th {
+    background-color: #4B7399;
+    color: white;
+}
+
+th.image {
+    text-align: center;
+}
